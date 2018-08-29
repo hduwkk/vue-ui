@@ -1,0 +1,91 @@
+@import '../common/variable.scss';
+@import './function.scss';
+// @mixin custom-button($type) {
+// 	background-color: $type;
+// 	border-color: $type;
+// 	color: $color-pure;
+// 	&:focus, &:hover {
+// 		background-color: lighten($type, 8%);
+// 		border-color: lighten($type, 8%);
+// 		color: $color-pure;
+// 	}
+// 	&.is-active, &:active {
+// 		background-color: darken($type, 8%);
+// 		border-color: darken($type, 8%);
+// 		color: $color-pure;
+// 	}
+// };
+
+// @mixin plain-button($color) {
+// 	background-color: transparentize($color, 0.88);
+// 	/*border-color: lighten($color, 22.5%);*/
+// 	border-color: transparentize($color, 0.60);
+// 	color: $color;
+// 	&:focus, &:hover {
+// 		background-color: $color;
+// 		border-color: $color;
+// 		color: $color-pure;
+// 	}
+// 	&.is-active, &:active {
+// 		background-color: darken($color, 8%);
+// 		border-color: darken($color, 8%);
+// 		color: $color-pure;
+// 	}
+// }
+
+// @mixin button-size($size) {
+// 	@each $group in $button-size-stack {
+// 		@if (map-get($group, size) == $size) {
+// 			padding: map-get($group, padding);
+// 			font-size: map-get($group, font-size);
+// 			border-radius: map-get($group, border-radius);
+// 		}
+// 	}
+// }
+
+/* placeholder */
+
+/* Break-points */
+
+/* Scrollbar */
+@mixin scroll-bar {
+  $--scrollbar-thumb-background: #b4bccc;
+  $--scrollbar-track-background: #fff;
+
+  &::-webkit-scrollbar {
+    z-index: 11;
+    width: 6px;
+
+    &:horizontal {
+      height: 6px;
+    }
+
+    &-thumb {
+      border-radius: 5px;
+      width: 6px;
+      background: $--scrollbar-thumb-background;
+    }
+
+    &-corner {
+      background: $--scrollbar-track-background;
+    }
+
+    &-track {
+      background: $--scrollbar-track-background;
+
+      &-piece {
+        background: $--scrollbar-track-background;
+        width: 6px;
+      }
+    }
+  }
+}
+
+/* BEM */
+@mixin b($block) {
+  $B: $namespace + '-' + $block !global;
+
+  .#{$B} {
+    @content;
+  }
+}

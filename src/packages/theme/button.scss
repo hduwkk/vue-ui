@@ -1,0 +1,93 @@
+/*
+* @Author: Administrator
+* @Date:   2018-07-23 14:23:04
+ * @Last Modified by: mikey.zhaopeng
+ * @Last Modified time: 2018-08-15 21:42:55
+*/
+@import './common/variable.scss';
+@import './mixins/button';
+@import './mixins/mixin.scss';
+@import './mixins/util.scss';
+// .ep-button {
+// 	display: inline-block;
+// 	line-height: 1;
+// 	white-space: nowrap;
+// 	cursor: pointer;
+// 	background: #fff;
+// 	border: 1px solid #dcdfe6;
+// 	color: #606266;
+// 	-webkit-appearance: none;
+// 	text-align: center;
+// 	box-sizing: border-box;
+// 	outline: none;
+// 	margin: 0;
+// 	transition: all 0.1s;
+// 	font-weight: 500;
+// 	user-select: none;
+// 	padding: 12px 20px;
+// 	font-size: 14px;
+// 	border-radius: 4px;
+// 	&:focus, &:hover {
+// 		color: $primary;
+// 		border-color: lighten($primary, 10%);
+// 		background-color: lighten($primary, 33.78%);
+// 	};
+// 	&:active {
+// 		color: darken($primary, 10%);
+// 		border-color: darken($primary, 10%);
+// 		outline: none;
+// 	};
+// 	&.is-plain:focus, &.is-plain:hover {
+// 		background-color: $color-pure;
+// 		border-color: $primary;
+// 		color: $primary;
+// 	}
+// 	&.is-plain.is-active, &.is-plain:active {
+// 		border-color: darken($primary, 10%);
+// 		color: darken($primary, 10%);
+// 	}
+// 	&.is-round {
+// 		border-radius: 20px;
+// 	}
+// }
+
+// @each $button-type, $type in (primary: $primary, success: $success, danger: $danger, info: $info) {
+// 	.ep-button--#{$button-type} {
+// 		@include custom-button($type)
+// 	}
+// 	.ep-button--#{$button-type}.is-plain {
+// 		@include plain-button($type)
+// 	}
+// }
+
+// @each $button-size in (medium, small, mini) {
+// 	.ep-button--#{$button-size} {
+// 		@include button-size($button-size)
+// 	}
+// }
+
+@include b(button) {
+  display: inline-block;
+  line-height: 1;
+  white-space: nowrap;
+  cursor: pointer;
+  background: $--button-default-fill;
+  border: $--border-base;
+  border-color: $--button-default-border;
+  color: $--button-default-color;
+  -webkit-appearance: none;
+  text-align: center;
+  box-sizing: border-box;
+  outline: none;
+  margin: 0;
+  transition: .1s;
+  font-weight: $--button-font-weight;
+  @include utils-user-select(none);
+  & + .ep-button {
+    margin-left: 10px;
+  }
+}
+
+.ccc {
+  @include scroll-bar;
+}
