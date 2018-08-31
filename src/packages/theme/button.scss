@@ -86,8 +86,53 @@
   & + .ep-button {
     margin-left: 10px;
   }
-}
 
-.ccc {
-  @include scroll-bar;
+  @include button-size($--button-padding-vertical, $--button-padding-horizontal, $--button-font-size, $--button-border-radius);
+
+  &:hover, &:focus {
+    color: $--color-primary;
+    border-color: $--color-primary-light-7;
+    background-color: $--color-primary-light-9;
+  }
+
+  &:active {
+    color: mix($--color-black, $--color-primary, $--button-active-shade-percent);
+    border-color: mix($--color-black, $--color-primary, $--button-active-shade-percent);
+    outline: none;
+  }
+
+  &::-moz-focus-inner {
+    border: 0;
+  }
+  // 图标位置预留
+
+  // $modifier可以是对象
+  @mixin m ($modifier) {
+    $selector: &;
+    $currentSelector: "";
+    @each $unit in $modifier {
+      $currentSelector: #{$currentSelector + & + $modifier-separator + $unit + ","};
+    }
+
+    @at-root {
+      #{$currentSelector} {
+        @content;
+      }
+    }
+  }
+
+  // .is-plain
+  @include when(plain) {
+    &:hover, &:focus {
+      background-color: $--color-white;
+      border-color: $--color-primary;
+      color: $--color-primary;
+    }
+    &:active {
+      background-color: $--color-white;
+      border-color: mix($--color-black, $--color-primary, $--button-active-shade-percent);
+      color: mix($--color-black, $--color-primary, $--button-active-shade-percent);
+      outline: none;
+    }
+  }
 }

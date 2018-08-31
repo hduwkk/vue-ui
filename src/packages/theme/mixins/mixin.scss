@@ -89,3 +89,17 @@
     @content;
   }
 }
+
+/* @mixin e($element) {
+  $E: $element !global;
+  $selector: &;
+  $currentSelector: "";
+} */
+
+@mixin when($state) {
+  @at-root {
+    &.#{$state-prefix + $state} {
+      @content;
+    }
+  }
+}
