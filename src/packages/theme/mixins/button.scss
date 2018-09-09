@@ -34,3 +34,37 @@
     padding: $padding-vertical $padding-horizontal;
   }
 }
+
+@mixin button-variant($color, $background-color, $border-color) {
+  color: $color;
+  background-color: $background-color;
+  border-color: $border-color;
+
+  &:hover, &:focus {
+    background-color: mix($--color-white, $background-color, $--button-hover-tint-percent);
+    border-color: mix($--color-white, $border-color, $--button-hover-tint-percent);
+    color: $color;
+  }
+
+  &:active, &.is-active {
+    background-color: mix($--color-black, $background-color, $--button-active-shade-percent);
+    border-color: mix($--color-black, $border-color, $--button-active-shade-percent);
+    color: $color;
+  }
+
+  &:active {
+    outline: none;
+  }
+
+  &.is-disabled {
+    &, &:hover, &:focus, &:active {
+      color: $--color-white;
+      background-color: mix($background-color, $--color-white);
+      border-color: mix($border-color, $--color-white);
+    }
+  }
+
+  &.is-plain {
+    @include button-plain($background-color);
+  }
+}

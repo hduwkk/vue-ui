@@ -43,14 +43,17 @@ $--color-primary-light-9: mix($--color-white, $--color-primary, 90%) !default;
 $--color-success: #67c23a !default;
 $--color-warning: #e6a23c !default;
 $--color-danger: #f56c6c !default;
+$--color-info: #909399 !default;
 
 $--color-success-light: mix($--color-white, $--color-success, 80%) !default;
 $--color-warning-light: mix($--color-white, $--color-warning, 80%) !default;
 $--color-danger-light: mix($--color-white, $--color-danger, 80%) !default;
+$--color-info-light: mix($--color-white, $--color-info, 80%) !default;
 
 $--color-success-lighter: mix($--color-white, $--color-success, 90%) !default;
 $--color-warning-lighter: mix($--color-white, $--color-warning, 90%) !default;
 $--color-danger-lighter: mix($--color-white, $--color-danger, 90%) !default;
+$--color-info-lighter: mix($--color-white, $--color-info, 90%) !default;
 
 $--color-text-primary: #303133 !default;
 $--color-text-regular: #606266 !default;
@@ -139,6 +142,10 @@ $--button-warning-fill: $--color-warning !default;
 $--button-danger-border: $--color-danger !default;
 $--button-danger-color: $--color-white !default;
 $--button-danger-fill: $--color-danger !default;
+
+$--button-info-border: $--color-info !default;
+$--button-info-color: $--color-white !default;
+$--button-info-fill: $--color-info !default;
 
 $--button-hover-tint-percent: 20% !default;
 $--button-active-shade-percent: 10% !default;

@@ -90,15 +90,24 @@
   }
 }
 
-/* @mixin e($element) {
-  $E: $element !global;
-  $selector: &;
-  $currentSelector: "";
-} */
-
 @mixin when($state) {
   @at-root {
     &.#{$state-prefix + $state} {
+      @content;
+    }
+  }
+}
+/* $modifier-separator: - */
+@mixin m ($modifier) {
+  $selector: &;
+  $currentSelector: "";
+
+  @each $unit in $modifier {
+    $currentSelector: #{$currentSelector + & + $modifier-separator + $unit + ","};
+  }
+
+  @at-root {
+    #{$currentSelector} {
       @content;
     }
   }

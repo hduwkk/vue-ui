@@ -8,6 +8,7 @@
   :class="[
     type ? 'ep-button--' + type : '',
     buttonSize ? 'ep-button--' + buttonSize : '',
+    icon,
     {
       'is-disabled': buttonDisabled,
       'is-loading': loading,

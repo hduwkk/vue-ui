@@ -104,25 +104,16 @@
   &::-moz-focus-inner {
     border: 0;
   }
-  // 图标位置预留
-
-  // $modifier可以是对象
-  @mixin m ($modifier) {
-    $selector: &;
-    $currentSelector: "";
-
-    @each $unit in $modifier {
-      $currentSelector: #{$currentSelector + & + $modifier-separator + $unit + ","};
-    }
-
-    @at-root {
-      #{$currentSelector} {
-        @content;
-      }
-    }
-  }
-
-  // .is-plain
+  /*
+    图标位置预留
+  */
+  
+  /*
+  * $modifier可以是对象
+  **/
+  /*
+  * .is-plain
+  */
   @include when(plain) {
     &:hover, &:focus {
       background-color: $--color-white;
@@ -134,6 +125,115 @@
       border-color: mix($--color-black, $--color-primary, $--button-active-shade-percent);
       color: mix($--color-black, $--color-primary, $--button-active-shade-percent);
       outline: none;
+    }
+  }
+
+  @include when(active) {
+    color: mix($--color-black, $--color-primary, $--button-active-shade-percent);
+    border-color: mix($--color-black, $--color-primary, $--button-active-shade-percent);
+  }
+
+  @include when(disabled) {
+    &, &:hover, &:focus {
+      color: $--button-disabled-color;
+      background-image: none;
+      background-color: $--button-disabled-fill;
+      border-color: $--button-disabled-border;
+      cursor: not-allowed;
+    }
+
+    &.el-button--text {
+      background-color: transparent;
+    }
+
+    &.is-plain {
+      &, &:hover, &:focus {
+        color: $--button-disabled-color;
+        background-color: $--color-white;
+        border-color: $--button-disabled-border;
+      }
+    }
+  }
+
+  @include when(loading) {
+    position: relative;
+    pointer-events: none;
+    &:before {
+      pointer-events: none;
+      content: '';
+      position: absolute;
+      left: -1px;
+      top: -1px;
+      right:-1px;
+      bottom: -1px;
+      border-radius: inherit;
+      background-color: rgba(255,255,255,0.35);
+    }
+  }
+
+  @include when(round) {
+    border-radius: 20px;
+    padding: 12px 23px;
+  }
+  @include when(circle) {
+    border-radius: 50%;
+    padding: $--button-padding-vertical;
+  }
+
+  @include m (primary) {
+    @include button-variant($--button-primary-color, $--button-primary-fill, $--button-primary-border);
+  }
+  @include m (success) {
+    @include button-variant($--button-success-color, $--button-success-fill, $--button-success-border);
+  }
+  @include m (warning) {
+    @include button-variant($--button-warning-color, $--button-warning-fill, $--button-warning-border);
+  }
+  @include m (danger) {
+    @include button-variant($--button-danger-color, $--button-danger-fill, $--button-danger-border);
+  }
+  @include m (info) {
+    @include button-variant($--button-info-color, $--button-info-fill, $--button-info-border);
+  }
+
+  @include m (medium) {
+    @include button-size($--button-medium-padding-vertical, $--button-medium-padding-horizontal, $--button-medium-font-size, $--button-medium-border-radius);
+    @include when(circle) {
+      padding: $--button-medium-padding-vertical;
+    }
+  }
+  @include m (small) {
+    @include button-size($--button-small-padding-vertical, $--button-small-padding-horizontal, $--button-small-font-size, $--button-small-border-radius);
+    @include when(circle) {
+      padding: $--button-small-padding-vertical;
+    }
+  }
+  @include m (mini) {
+    @include button-size($--button-mini-padding-vertical, $--button-mini-padding-horizontal, $--button-mini-font-size, $--button-mini-border-radius);
+    @include when(circle) {
+      padding: $--button-mini-padding-vertical;
+    }
+  }
+  @include m (text) {
+    border-color: transparent;
+    color: $--color-primary;
+    background: transparent;
+    padding-left: 0;
+    padding-right: 0;
+
+    &:hover, &:focus {
+      color: mix($--color-white, $--color-primary, $--button-hover-tint-percent);
+      border-color: transparent;
+      background-color: transparent;
+    }
+    &:active {
+      color: mix($--color-black, $--color-primary, $--button-active-shade-percent);
+      border-color: transparent;
+      background-color: transparent;
+    }
+
+    &.is-disabled, &.is-disabled:hover, &.is-disabled:focus {
+      border-color: transparent;
     }
   }
 }

@@ -8,8 +8,8 @@
   </div>
 </template>
 <style lang="scss">
-@import '@/packages/theme/base.scss';
 @import '@/packages/theme/button.scss';
+@import '@/packages/theme/icon.scss';
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
