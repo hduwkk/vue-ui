@@ -25,7 +25,7 @@
       <Button type="danger" round>danger</Button>
     </div>
     <div class="button-group">
-      <Button icon="fa-heart-o" circle></Button>
+      <Button icon="ep-icon-left" circle></Button>
     </div>
     <h3>大小</h3>
     <Button>默认按钮</Button>
@@ -33,8 +33,8 @@
     <Button size="small">小型按钮</Button>
     <Button size="mini">迷你按钮</Button>
     <div style="margin: 5px 0;"></div>
-    <Button round>默认按钮</Button>
-    <Button size="medium" round>中等按钮</Button>
+    <Button round>loading</Button>
+    <Button size="medium" :loading="true">中等按钮</Button>
     <Button size="small" round>小型按钮</Button>
     <Button size="mini" round>迷你按钮</Button>
     <div style="margin: 5px 0;"></div>

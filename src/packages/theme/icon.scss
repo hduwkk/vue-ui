@@ -1,1 +1,9 @@
-$red: red;
+[class^="ep-icon-"], [class*=" ep-icon-"] {
+  font-family: 'iconfont' !important;
+  font: normal normal normal 14px/1 FontAwesome;
+  text-rendering: auto;
+/* Better text rendering */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  display: inline-block;
+}

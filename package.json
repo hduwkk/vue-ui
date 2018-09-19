@@ -11,6 +11,7 @@
   "dependencies": {
     "element-ui": "^2.4.5",
     "font-awesome": "^4.7.0",
+    "resize-observer-polyfill": "^1.5.0",
     "vue": "^2.5.16",
     "vue-router": "^3.0.1"
   },
@@ -36,11 +37,14 @@
       "@vue/standard"
     ],
     "rules": {
-      "space-before-function-paren": ["error", {
-        "anonymous": "always",
-        "named": "ignore",
-        "asyncArrow": "always"
-      }]
+      "space-before-function-paren": [
+        "error",
+        {
+          "anonymous": "always",
+          "named": "ignore",
+          "asyncArrow": "always"
+        }
+      ]
     },
     "parserOptions": {
       "parser": "babel-eslint"

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    #a, #b {
+      width: 200px;
+      height: 200px;
+      border: 1px solid #000;
+      background-color: #eee;
+      margin: 0 auto;
+    }
+  </style>
+</head>
+<body>
+  <div class="aaa" id="a">
+&nbsp;1&nbsp;2&nbsp;
+  </div>
+  <script>
+    var str = a.innerHTML;
+    console.log(`str: ${str}, length: ${str.length}`)
+    console.log(`trim: ${str.trim()}, trim_length: ${str.trim().length}`)
+  </script>
+</body>
+</html>

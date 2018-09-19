@@ -8,7 +8,6 @@
   :class="[
     type ? 'ep-button--' + type : '',
     buttonSize ? 'ep-button--' + buttonSize : '',
-    icon,
     {
       'is-disabled': buttonDisabled,
       'is-loading': loading,
@@ -17,7 +16,8 @@
       'is-circle': circle
     }
   ]">
-    <i class="fa fa-spinner" v-if="loading"></i>
+    <i class="ep-icon-loading" v-if="loading"></i>
+    <i :class="icon" v-if="icon && !loading"></i>
     <span v-if="$slots.default">
       <slot></slot>
     </span>
@@ -25,6 +25,7 @@
 </template>
 <script>
 export default {
+  name: 'epButton',
   props: {
     type: {
       type: String,

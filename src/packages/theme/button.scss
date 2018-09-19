@@ -2,7 +2,7 @@
 * @Author: Administrator
 * @Date:   2018-07-23 14:23:04
  * @Last Modified by: mikey.zhaopeng
- * @Last Modified time: 2018-08-15 21:42:55
+ * @Last Modified time: 2018-09-10 00:09:17
 */
 @import './common/variable.scss';
 @import './mixins/button';
@@ -107,7 +107,11 @@
   /*
     图标位置预留
   */
-  
+  & [class*="icon-"] {
+    & + span {
+      margin-left: 5px;
+    }
+  }
   /*
   * $modifier可以是对象
   **/
@@ -236,4 +240,17 @@
       border-color: transparent;
     }
   }
+}
+
+@keyframes ep-button-loading {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.ep-icon-loading {
+  animation: ep-button-loading linear infinite 3s;
 }

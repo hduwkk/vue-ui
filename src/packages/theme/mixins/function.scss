@@ -1,2 +1,26 @@
 @import "config.scss";
 // element-ui 的这些部分是用来 调试用的
+
+@function selectorToString($selector) {
+  $selector: inspect($selector);
+  $selector: str-slice($selector, 2, -2);
+  @return $selector;
+}
+
+@function containModifier($selector) {
+  $selector: selectorToString($selector);
+  
+  @if str-index($selector, $modifier-separator) {
+    @return true;
+  } @else {
+    @return false;
+  }
+}
+
+@function containWhenFlag($selector) {}
+
+@function containPseudoClass($selector) {}
+
+@function hitAllSpecialNestRule($selector) {
+  @return containModifier($selector) or containWhenFlag($selector) or containPseudoClass($selector);
+}
