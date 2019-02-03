@@ -17,9 +17,24 @@
   }
 }
 
-@function containWhenFlag($selector) {}
+@function containWhenFlag($selector) {
+  $selector: selectorToString($selector);
 
-@function containPseudoClass($selector) {}
+  @if str-index($selector, $modifier-separator) {
+    @return true;
+  } @else {
+    @return false;
+  }
+}
+
+@function containPseudoClass($selector) {
+  $selector: selectorToString($selector);
+  @if str-index($selector, '.' + $state-prefix) {
+    @return true;
+  } @else {
+    @return false;
+  }
+}
 
 @function hitAllSpecialNestRule($selector) {
   @return containModifier($selector) or containWhenFlag($selector) or containPseudoClass($selector);

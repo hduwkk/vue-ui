@@ -14,6 +14,7 @@ const resizeHandler = function (entries) {
 }
 
 export const addResizeListener = function (element, fn) {
+  console.log(element, 'element ... addResizeListener')
   if (isServer) return;
   if (!element.__resizeListeners__) {
     element.__resizeListeners__ = [];
@@ -24,6 +25,7 @@ export const addResizeListener = function (element, fn) {
 }
 
 export const removeResizeListener = function(element, fn) {
+  console.log(element, 'element ... removeResizeListener')
   if (!element || !element.__resizeListeners__) return;
   element.__resizeListeners__.splice(element.__resizeListeners__.indexOf(fn), 1);
   if (!element.__resizeListeners__.length) {

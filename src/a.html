@@ -5,24 +5,36 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Document</title>
-  <style>
-    #a, #b {
-      width: 200px;
-      height: 200px;
-      border: 1px solid #000;
-      background-color: #eee;
-      margin: 0 auto;
-    }
-  </style>
 </head>
 <body>
-  <div class="aaa" id="a">
-&nbsp;1&nbsp;2&nbsp;
+  <div id="a" style="width: 100px;overflow: scroll;">
+    <div id="b" style="width: 100%;"></div>
   </div>
-  <script>
-    var str = a.innerHTML;
-    console.log(`str: ${str}, length: ${str.length}`)
-    console.log(`trim: ${str.trim()}, trim_length: ${str.trim().length}`)
-  </script>
-</body>
+  <!-- <button id="loginBtn">登录</button>
+  <script type="text/javascript">
+      var createLoginLayer = function(){
+          var div = document.createElement("div");
+          div.innerHTML = '我是登录浮窗';
+          div.style.display = 'none';
+          document.body.appendChild(div);
+          return div;
+      };
+  
+      var getSingle = function(fn){
+          var result;
+          var arg = arguments;
+          console.log(arg, 'arg')
+          return function(){
+              console.log(arg === arguments, arguments)
+              return result || (result = fn.apply(this, arguments));
+          }
+      };
+  
+      var createSingleLoginLayer = getSingle(createLoginLayer);
+      document.getElementById('loginBtn').onclick = function(){
+          var loginLayer = createSingleLoginLayer();
+          loginLayer.style.display = 'block';
+      };
+  </script> -->
+  </body>
 </html>
