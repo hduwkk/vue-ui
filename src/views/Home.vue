@@ -43,7 +43,7 @@
 <script>
 // @ is an alias to /src
 import HelloWorld from '@/components/HelloWorld.vue'
-import Button from '@/packages/button/src/button.vue'
+import Button from '@/components/button/src/button.vue'
 export default {
   name: 'home',
   components: {

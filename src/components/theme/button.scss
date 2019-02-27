@@ -2,69 +2,12 @@
 * @Author: Administrator
 * @Date:   2018-07-23 14:23:04
  * @Last Modified by: mikey.zhaopeng
- * @Last Modified time: 2018-09-10 00:09:17
+ * @Last Modified time: 2019-02-28 01:14:32
 */
 @import './common/variable.scss';
 @import './mixins/button';
 @import './mixins/mixin.scss';
 @import './mixins/util.scss';
-// .ep-button {
-// 	display: inline-block;
-// 	line-height: 1;
-// 	white-space: nowrap;
-// 	cursor: pointer;
-// 	background: #fff;
-// 	border: 1px solid #dcdfe6;
-// 	color: #606266;
-// 	-webkit-appearance: none;
-// 	text-align: center;
-// 	box-sizing: border-box;
-// 	outline: none;
-// 	margin: 0;
-// 	transition: all 0.1s;
-// 	font-weight: 500;
-// 	user-select: none;
-// 	padding: 12px 20px;
-// 	font-size: 14px;
-// 	border-radius: 4px;
-// 	&:focus, &:hover {
-// 		color: $primary;
-// 		border-color: lighten($primary, 10%);
-// 		background-color: lighten($primary, 33.78%);
-// 	};
-// 	&:active {
-// 		color: darken($primary, 10%);
-// 		border-color: darken($primary, 10%);
-// 		outline: none;
-// 	};
-// 	&.is-plain:focus, &.is-plain:hover {
-// 		background-color: $color-pure;
-// 		border-color: $primary;
-// 		color: $primary;
-// 	}
-// 	&.is-plain.is-active, &.is-plain:active {
-// 		border-color: darken($primary, 10%);
-// 		color: darken($primary, 10%);
-// 	}
-// 	&.is-round {
-// 		border-radius: 20px;
-// 	}
-// }
-
-// @each $button-type, $type in (primary: $primary, success: $success, danger: $danger, info: $info) {
-// 	.ep-button--#{$button-type} {
-// 		@include custom-button($type)
-// 	}
-// 	.ep-button--#{$button-type}.is-plain {
-// 		@include plain-button($type)
-// 	}
-// }
-
-// @each $button-size in (medium, small, mini) {
-// 	.ep-button--#{$button-size} {
-// 		@include button-size($button-size)
-// 	}
-// }
 
 @include b(button) {
   display: inline-block;
@@ -80,14 +23,11 @@
   box-sizing: border-box;
   outline: none;
   margin: 0;
-  transition: .1s;
+  transition: .3s;
   font-weight: $--button-font-weight;
   @include utils-user-select(none);
-  & + .ep-button {
-    margin-left: 10px;
-  }
-
-  @include button-size($--button-padding-vertical, $--button-padding-horizontal, $--button-font-size, $--button-border-radius);
+  @include button-size($--button-padding-vertical, $--button-padding-horizontal,
+  $--button-font-size, $--button-border-radius);
 
   &:hover, &:focus {
     color: $--color-primary;
@@ -101,9 +41,6 @@
     outline: none;
   }
 
-  &::-moz-focus-inner {
-    border: 0;
-  }
   /*
     图标位置预留
   */
@@ -112,12 +49,7 @@
       margin-left: 5px;
     }
   }
-  /*
-  * $modifier可以是对象
-  **/
-  /*
-  * .is-plain
-  */
+
   @include when(plain) {
     &:hover, &:focus {
       background-color: $--color-white;
@@ -242,7 +174,7 @@
   }
 }
 
-@keyframes ep-button-loading {
+@keyframes button-loading {
   from {
     transform: rotate(0deg);
   }
@@ -251,6 +183,6 @@
   }
 }
 
-.ep-icon-loading {
-  animation: ep-button-loading linear infinite 3s;
+.#{$namespace + '-icon-loading'} {
+  animation: button-loading linear infinite 3s;
 }

@@ -1,11 +1,12 @@
 import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
-import './packages/theme/fonts/iconfont.css'
-import './packages/theme/index.scss'
-import Button from './packages/button/index'
-import Scrollbar from './packages/scrollbar/'
-import Scrollbar2 from './packages/scrollbar-element/'
+import './components/theme/fonts/iconfont.css'
+import './components/theme/index.scss'
+
+import Button from './components/button/index'
+import Scrollbar from './components/scrollbar/'
+import Scrollbar2 from './components/scrollbar-element/'
 Vue.use(Button)
 Vue.use(Scrollbar)
 Vue.use(Scrollbar2)

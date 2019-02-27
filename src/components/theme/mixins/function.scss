@@ -1,0 +1,41 @@
+// @import "config.scss";
+// // element-ui 仅供学习参考用
+
+// @function selectorToString($selector) {
+//   $selector: inspect($selector);
+//   $selector: str-slice($selector, 2, -2);
+//   @return $selector;
+// }
+
+// @function containModifier($selector) {
+//   $selector: selectorToString($selector);
+  
+//   @if str-index($selector, $modifier-separator) {
+//     @return true;
+//   } @else {
+//     @return false;
+//   }
+// }
+
+// @function containWhenFlag($selector) {
+//   $selector: selectorToString($selector);
+
+//   @if str-index($selector, $modifier-separator) {
+//     @return true;
+//   } @else {
+//     @return false;
+//   }
+// }
+
+// @function containPseudoClass($selector) {
+//   $selector: selectorToString($selector);
+//   @if str-index($selector, '.' + $state-prefix) {
+//     @return true;
+//   } @else {
+//     @return false;
+//   }
+// }
+
+// @function hitAllSpecialNestRule($selector) {
+//   @return containModifier($selector) or containWhenFlag($selector) or containPseudoClass($selector);
+// }
