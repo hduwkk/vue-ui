@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    .my-button {
+      width: 100px;
+      line-height: 1.8;
+      border: 1px solid #000;
+      margin: 20px auto;
+      text-align: center;
+    } 
+    .my-popper {
+      border: 1px dashed #f0f;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="my-button">reference</div>
+  <div class="my-popper">popper</div>
+  <script src="./popper.js"></script>
+  <script>
+    var reference = document.querySelector('.my-button');
+    var popper = document.querySelector('.my-popper');
+    var popperInstance = new Popper(reference, popper, {
+      placement: 'left',
+      offset: 30,
+      removeOnDestroy: true
+    });
+  </script>
+</body>
+
+</html>

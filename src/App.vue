@@ -1,13 +1,14 @@
 <template>
   <div id="app">
     <div id="nav">
-      <router-link to="/">Home</router-link> |
+      <router-link to="/">Home</router-link>
       <router-link to="/scroll">Scroll</router-link>
+      <router-link to="/popper">popper</router-link>
     </div>
     <router-view/>
   </div>
 </template>
-<style lang="scss">
+<style lang="scss" scoped>
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -23,6 +24,9 @@
     &.router-link-exact-active {
       color: #42b983;
     }
+  }
+  a + a {
+    margin-left: 20px;
   }
 }
 </style>

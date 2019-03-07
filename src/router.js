@@ -21,6 +21,10 @@ export default new Router({
     {
       path: '/scroll',
       component: ScrollBar
+    },
+    {
+      path: '/popper',
+      component: () => import('./views/popper.vue')
     }
   ]
 })
